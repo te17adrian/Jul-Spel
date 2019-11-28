@@ -1,0 +1,12 @@
+canvas {
+    position: absolute;
+}
+
+#stage {
+    position: relative;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
