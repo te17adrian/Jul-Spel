@@ -171,13 +171,8 @@ class Canvas {
                 //     this.flipHorizontally(this.actorsCtx, x + width / 2);
                 // }
                 let tileX = tile * sources.enemy.width;
-                let tileY = 0;
-                if (actor.delta < 0) {
-                    tileY = 1;
-                }
-                tileY = tileY * sources.enemy.height;
                 // this.actorsCtx.clearRect(actor.prevX , actor.prevY , width, height);
-                this.actorsCtx.drawImage(sources.enemy.image, tileX, tileY, sources.enemy.width, sources.enemy.height, x, y, width, height);
+                this.actorsCtx.drawImage(sources.enemy.image, tileX, 0, sources.enemy.width, sources.enemy.height, x, y, width, height);
                 actor.prevX = x;
                 actor.prevY = y;
                 // this.actorsCtx.restore();
