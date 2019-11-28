@@ -1,23 +1,23 @@
-class Enemy
+class Enemy3
 {
     constructor(pos, speed, delta, prevX, prevY)
     {
         this.pos = pos;
         this.speed = speed;
-        this.size = new Vector(1.5, 1.5);
+        this.size = new Vector(1, 1);
         this.delta = delta;
-        this.xSpeed = 3;
+        this.xSpeed = 10;
         this.prevX = prevX;
         this.prevY = prevY;
     }
 
     static create(pos) {
-        return new Enemy(pos.plus(new Vector(0, -1)), new Vector(2, 0), 1);
+        return new Enemy3(pos.plus(new Vector(0, -1)), new Vector(2, 0), 1);
     }
 
     get type()
     { 
-        return "enemy";
+        return "enemy3";
     }
 
     collide = function(state)
@@ -47,6 +47,6 @@ class Enemy
             currentYSpeed = 0;
         }
 
-        return new Enemy(pos, new Vector(currentXSpeed, currentYSpeed), this.delta, this.prevX, this.prevY);
+        return new Enemy3(pos, new Vector(currentXSpeed, currentYSpeed), this.delta, this.prevX, this.prevY);
     }
 }

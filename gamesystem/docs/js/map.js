@@ -13,7 +13,9 @@ const levelKey = {
     "255,255,155": Lava, 
     "0,255,0": Player,
     "255,0,100": Item,
-    "255,100,255": Enemy
+    "255,100,255": Enemy,
+    "255,50,255": Enemy2,
+    "255,200,255": Enemy3
 };
 
 const groundTypes = ["grass", "ground", "platformC", "platformR", "platformL"];
@@ -30,6 +32,24 @@ let sources = {
     },
     enemy: {
         src: 'img/sprites/player.png',
+        srcWidth: 128,
+        srcHeight: 32,
+        width: 32,
+        height: 32,
+        offsetX: 0,
+        offsetY: 0
+    },
+    enemy2: {
+        src: 'img/sprites/player2.png',
+        srcWidth: 128,
+        srcHeight: 32,
+        width: 32,
+        height: 32,
+        offsetX: 0,
+        offsetY: 0
+    },
+    enemy3: {
+        src: 'img/sprites/player3.png',
         srcWidth: 128,
         srcHeight: 32,
         width: 32,
@@ -155,5 +175,5 @@ let sources = {
         offsetX: 352,
         offsetY: 320
     },
-    map1: {src: 'img/maps/debugmap.png'}
+    map1: {src: 'img/maps/map1test.png'}
 };
