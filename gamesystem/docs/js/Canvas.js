@@ -202,6 +202,32 @@ class Canvas {
                 actor.prevX = x;
                 actor.prevY = y;
                 // this.actorsCtx.restore();
+            } else if (actor.type == "enemy4") {
+                // this.flipPlayer = actor.speed.x > 0;
+                let tile = Math.floor(Date.now() / 60) % 4;
+                // this.actorsCtx.save();
+                // if (this.flipPlayer) {
+                //     this.flipHorizontally(this.actorsCtx, x + width / 2);
+                // }
+                let tileX = tile * sources.enemy4.width;
+                // this.actorsCtx.clearRect(actor.prevX , actor.prevY , width, height);
+                this.actorsCtx.drawImage(sources.enemy4.image, tileX, 0, sources.enemy4.width, sources.enemy4.height, x, y, width, height);
+                actor.prevX = x;
+                actor.prevY = y;
+                // this.actorsCtx.restore();
+            } else if (actor.type == "MovingPlatform") {
+                // this.flipPlayer = actor.speed.x > 0;
+                let tile = Math.floor(Date.now() / 60) % 4;
+                // this.actorsCtx.save();
+                // if (this.flipPlayer) {
+                //     this.flipHorizontally(this.actorsCtx, x + width / 2);
+                // }
+                let tileX = tile * sources.MovingPlatform.width;
+                // this.actorsCtx.clearRect(actor.prevX , actor.prevY , width, height);
+                this.actorsCtx.drawImage(sources.MovingPlatform.image, tileX, 0, sources.MovingPlatform.width, sources.MovingPlatform.height, x, y, width, height);
+                actor.prevX = x;
+                actor.prevY = y;
+                // this.actorsCtx.restore();
             } else {
                 this.actorsCtx.drawImage(sources[actor.type].image, x, y, width, height);
                 // this.mapCtx.fillStyle = sources[actor.type].color;

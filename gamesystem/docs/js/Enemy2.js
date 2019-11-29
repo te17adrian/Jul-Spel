@@ -12,7 +12,7 @@ class Enemy2
     }
 
     static create(pos) {
-        return new Enemy2(pos.plus(new Vector(0, -1)), new Vector(2, 0), 1);
+        return new Enemy2(pos.plus(new Vector(0, -1)), new Vector(2, 1), 1);
     }
 
     get type()

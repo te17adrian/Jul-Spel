@@ -31,6 +31,9 @@ class Rock
         }
         return state;
     }
+    collide = function(state) {
+        
+    }
 
     update = function(time, state)
     {

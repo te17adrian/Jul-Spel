@@ -1,6 +1,6 @@
 let width = 1024;
 let height = 768;
-let scale = 32;
+let scale = 16;
 
 let images = [];
 
