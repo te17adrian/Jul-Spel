@@ -32,6 +32,7 @@ class Canvas {
         this.flipPlayer = false;
 
         this.viewport = {
+            right: 1024,
             left: 0,
             top: 0,
             width: this.width / scale,
@@ -99,8 +100,12 @@ class Canvas {
             this.bgCtx.fillStyle = "rgb(255, 255, 255)";
         } else if (state.status == "lost") {
             this.bgCtx.fillStyle = "rgb(255, 0, 0)";
-        } else {
-            this.bgCtx.fillStyle = "rgb(52, 166, 251)";
+        } else { 
+           // let {right, top, width, height} = this.viewport;
+            var gradient = this.bgCtx.createLinearGradient(1024, top, this.width, this.height);
+            gradient.addColorStop(0, "rgb(22, 22, 22)");
+            gradient.addColorStop(1, "rgb(96, 96, 96)");
+            this.bgCtx.fillStyle = gradient;
         }
         this.bgCtx.fillRect(0, 0, this.width, this.height);
         let _top = (height - top) * 32;

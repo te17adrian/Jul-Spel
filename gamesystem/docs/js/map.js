@@ -25,6 +25,12 @@ const levelKey = {
 const groundTypes = ["grass", "ground", "platformC", "platformR", "platformL","MovingPlatform","MovingPlatform2"];
 
 let sources = {
+    bg: {
+        src: 'img/bak.png',
+        srcWidth: 1024,
+        srcHeight: 768,
+    },
+
     player: {
         src: 'img/sprites/cavedude_side2.png',
         srcWidth: 1248,
