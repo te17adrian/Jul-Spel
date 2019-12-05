@@ -1,5 +1,6 @@
 const levelKey = {
     "0,0,0": "empty",
+    "255,15,255": "clip2",
     "255,0,255": "clip",
     "0,0,255": "platformC",
     "100,0,255": "platformL",
@@ -15,10 +16,13 @@ const levelKey = {
     "255,0,100": Item,
     "255,100,255": Enemy,
     "255,50,255": Enemy2,
-    "255,200,255": Enemy3
+    "255,200,255": Enemy3,
+    "255,50,100": Enemy4,
+    "255,75,255": MovingPlatform,
+    "255,25,255": MovingPlatform2,
 };
 
-const groundTypes = ["grass", "ground", "platformC", "platformR", "platformL"];
+const groundTypes = ["grass", "ground", "platformC", "platformR", "platformL","MovingPlatform","MovingPlatform2"];
 
 let sources = {
     player: {
@@ -50,6 +54,15 @@ let sources = {
     },
     enemy3: {
         src: 'img/sprites/player3.png',
+        srcWidth: 128,
+        srcHeight: 32,
+        width: 32,
+        height: 32,
+        offsetX: 0,
+        offsetY: 0
+    },
+    enemy4: {
+        src: 'img/sprites/player4.png',
         srcWidth: 128,
         srcHeight: 32,
         width: 32,
@@ -94,6 +107,24 @@ let sources = {
         offsetY: 0
     },
     platformC: {
+        src: 'img/sprites/cavedude_side2.png',
+        srcWidth: 32,
+        srcHeight: 32,
+        width: 32,
+        height: 32,
+        offsetX: 32,
+        offsetY: 480
+    },
+    MovingPlatform: {
+        src: 'img/sprites/cavedude_side2.png',
+        srcWidth: 32,
+        srcHeight: 32,
+        width: 32,
+        height: 32,
+        offsetX: 32,
+        offsetY: 480
+    },
+    MovingPlatform2: {
         src: 'img/sprites/cavedude_side2.png',
         srcWidth: 32,
         srcHeight: 32,
@@ -175,5 +206,5 @@ let sources = {
         offsetX: 352,
         offsetY: 320
     },
-    map1: {src: 'img/maps/map1test.png'}
+    map1: {src: 'img/maps/debugmap.png'}
 };

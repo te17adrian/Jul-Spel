@@ -50,7 +50,6 @@ class State
                     newState = actor.collide(newState, keys);
             }
         }
-
         return newState;
     }
 }

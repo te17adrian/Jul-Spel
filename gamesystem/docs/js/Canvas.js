@@ -74,9 +74,13 @@ class Canvas {
         for (let y = yStart; y < yEnd; y++) {
             for (let x = xStart; x < xEnd; x++) {
                 let tile = level.layout[y][x];
-                if (tile !== "empty" && tile !== "clip") {
+                if (tile !== "empty" && tile !== "clip") 
+                if (tile !== "empty" && tile !== "clip2") {
                     let screenX = (x - left) * scale;
                     let screenY = (y - top) * scale;
+                    
+                    
+                    
 
                     if(tile !== undefined) {
                         this.mapCtx.drawImage(sources[tile].image, screenX, screenY, scale, scale);
@@ -199,6 +203,45 @@ class Canvas {
                 let tileX = tile * sources.enemy3.width;
                 // this.actorsCtx.clearRect(actor.prevX , actor.prevY , width, height);
                 this.actorsCtx.drawImage(sources.enemy3.image, tileX, 0, sources.enemy3.width, sources.enemy3.height, x, y, width, height);
+                actor.prevX = x;
+                actor.prevY = y;
+                // this.actorsCtx.restore();
+            } else if (actor.type == "enemy4") {
+                // this.flipPlayer = actor.speed.x > 0;
+                let tile = Math.floor(Date.now() / 60) % 4;
+                // this.actorsCtx.save();
+                // if (this.flipPlayer) {
+                //     this.flipHorizontally(this.actorsCtx, x + width / 2);
+                // }
+                let tileX = tile * sources.enemy4.width;
+                // this.actorsCtx.clearRect(actor.prevX , actor.prevY , width, height);
+                this.actorsCtx.drawImage(sources.enemy4.image, tileX, 0, sources.enemy4.width, sources.enemy4.height, x, y, width, height);
+                actor.prevX = x;
+                actor.prevY = y;
+                // this.actorsCtx.restore();
+            } else if (actor.type == "MovingPlatform") {
+                // this.flipPlayer = actor.speed.x > 0;
+                let tile = 0
+                // this.actorsCtx.save();
+                // if (this.flipPlayer) {
+                //     this.flipHorizontally(this.actorsCtx, x + width / 2);
+                // }
+                let tileX = tile * sources.MovingPlatform.width;
+                // this.actorsCtx.clearRect(actor.prevX , actor.prevY , width, height);
+                this.actorsCtx.drawImage(sources.MovingPlatform.image, tileX, 0, sources.MovingPlatform.width, sources.MovingPlatform.height, x, y, width, height);
+                actor.prevX = x;
+                actor.prevY = y;
+                // this.actorsCtx.restore();
+            } else if (actor.type == "MovingPlatform2") {
+                // this.flipPlayer = actor.speed.x > 0;
+                let tile = Math.floor(Date.now() / 60) % 4;
+                // this.actorsCtx.save();
+                // if (this.flipPlayer) {
+                //     this.flipHorizontally(this.actorsCtx, x + width / 2);
+                // }
+                let tileX = tile * sources.MovingPlatform2.width;
+                // this.actorsCtx.clearRect(actor.prevX , actor.prevY , width, height);
+                this.actorsCtx.drawImage(sources.MovingPlatform2.image, tileX, 0, sources.MovingPlatform2.width, sources.MovingPlatform2.height, x, y, width, height);
                 actor.prevX = x;
                 actor.prevY = y;
                 // this.actorsCtx.restore();

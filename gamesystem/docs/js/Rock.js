@@ -31,11 +31,9 @@ class Rock
         }
         return state;
     }
-
     update = function(time, state)
     {
         let newPos = this.pos.plus(this.speed.times(time));
         return new Rock(newPos, this.speed);
     }
-    
 }
