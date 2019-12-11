@@ -22,7 +22,7 @@ class Enemy4
 
     collide = function(state)
     {
-        return new State(state.level, state.actors, "lost");
+        return new State(state.level, state.actors, "You Lost.");
     }
 
 

@@ -53,9 +53,9 @@ async function runGame(plans) {
     offCanvas.height = plans.height;
     offCtx.clearRect(0, 0, plans.width, plans.height);
     let status = await runLevel(new Level(plans, offCtx, levelKey));
-    if (status == "won") {
-        console.log("You won");
-    } else if (status == "lost") {
+    if (status == "You Won!") {
+        console.log("You Won!");
+    } else if (status == "You Lost.") {
         console.log("Slain by lava");
     }
     window.addEventListener("click", function temp() {

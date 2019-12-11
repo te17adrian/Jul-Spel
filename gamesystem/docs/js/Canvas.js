@@ -138,7 +138,7 @@ class Canvas {
 
     drawUi = function(state)
     {
-        if (state.status == "won" || state.status == "lost") {
+        if (state.status == "You Won!" || state.status == "You Lost.") {
             this.uiCtx.fillStyle = "black";
             this.uiCtx.font = '40px sans-serif';
             this.uiCtx.textAlign = "center";

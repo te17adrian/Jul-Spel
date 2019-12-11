@@ -25,7 +25,7 @@ class Item
         let filtered = state.actors.filter(a => a != this);
         let status = state.status;
         let score = state.score;
-        if (!filtered.some(a => a.type == "item")) status = "won";
+        if (!filtered.some(a => a.type == "item")) status = "You Won!";
         return new State(state.level, filtered, status, ++score, state.rocks);
     }
 
