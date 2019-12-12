@@ -16,7 +16,7 @@ class Lava
     static create(pos, color) 
     {
         if (color == "255,255,155") {
-            return new Lava(pos, new Vector(0, 3), pos);
+            return new Lava(pos, new Vector(0, 5.5), pos);
         } else {
             return new Lava(pos, new Vector(0, 0));
         }
