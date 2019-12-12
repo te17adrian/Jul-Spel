@@ -1,6 +1,7 @@
+  
 class Player
 {
-    constructor(pos, speed, prevX, prevY)
+    constructor(pos, speed, prevX, prevY, facing)
     {
         this.pos = pos;
         this.size = new Vector(1, 1);
@@ -10,9 +11,11 @@ class Player
         this.ySpeed = 16;
         this.prevX = prevX;
         this.prevY = prevY;
+        this.facing = facing || "left";
     }
 
-    static create(pos) {
+    static create(pos)
+    {
         return new Player(pos.plus(new Vector(0, -1)), new Vector(0, 0));
     }
 
@@ -40,15 +43,18 @@ class Player
             pos = movedY;
         } else if ( (keys.ArrowUp || keys.KeyW) && currentYSpeed > 0) {
             if (currentYSpeed > 25) {
-                console.log("ouch cant dodge by uparrow"); // call on function for taking damage                
+                state.health = Math.floor(state.health - currentYSpeed);
+                console.log("ouch cant dodge by uparrow " + state.health); // call on function for taking damage                
             }
             currentYSpeed = -this.ySpeed;
         } else {
             if (currentYSpeed > 25) {
-                console.log("ouch"); // call on function for taking damage                
+                state.health = Math.floor(state.health - currentYSpeed);
+                console.log("ouch " + state.health); // call on function for taking damage                
             }
             currentYSpeed = 0;
         }
-        return new Player(pos, new Vector(currentXSpeed, currentYSpeed), this.prevX, this.prevY, this.delta);
+
+        return new Player(pos, new Vector(currentXSpeed, currentYSpeed), this.prevX, this.prevY, this.facing);
     }
 }
