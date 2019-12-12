@@ -3,7 +3,6 @@ let height = 768;
 let scale = 32;
 
 let images = [];
-let music;
 
 let offCanvas = document.createElement('canvas');
 let offCtx = offCanvas.getContext('2d');
@@ -11,7 +10,6 @@ let body = document.getElementsByTagName("body")[0];
 
 let arrowKeys = trackKeys(["ArrowLeft", "ArrowRight", "ArrowUp", "Space", "KeyW", "KeyA", "KeyD", "KeyG"]);
 let gravity = 24;
-
 
 function loadImages(sources, callback) {
     let loadedImages = 0;
@@ -30,8 +28,6 @@ function loadImages(sources, callback) {
         sources[src].image = images[src];
     }
 }
-
-
 
 loadImages(sources, function() {
     // double preload profit?
@@ -123,29 +119,4 @@ function getRandomColor() {
     let g = Math.round(Math.random() * 255);
     let b = Math.round(Math.random() * 255);
     return "rgb(" + r + "," + g + "," + b + ")";
-}
-
-
-
-function getRandomIntInclusive(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
-  }
-
-function musicRandom() {
-    let music = new Array (
-        new Audio('music/calmsong1.wav'),
-        new Audio('music/calmsong2.wav'),
-        new Audio('music/song1.wav'),
-        new Audio('music/song2.wav'),
-        new Audio('music/song3.wav'),
-        new Audio('music/song4.wav'),
-        new Audio('music/song5.wav'),
-    )
-    let num = getRandomIntInclusive (0,6);
-
-    console.log (music[num])
-    
-
 }

@@ -32,7 +32,7 @@ let sources = {
     },
 
     player: {
-        src: 'img/sprites/cavedude_side2',
+        src: 'img/sprites/cavedude_side2.png',
         srcWidth: 1248,
         srcHeight: 186,
         width: 96,

@@ -7,7 +7,7 @@ class MovingPlatform
         this.size = new Vector(5, 1);
         this.delta = delta;
         this.xSpeed = 0;
-        this.ySpeed = 8
+        this.ySpeed = 2
         this.prevX = prevX;
         this.prevY = prevY;
     }
@@ -17,8 +17,9 @@ class MovingPlatform
     }
     collide = function(state)
     {
-      return state 
-}
+        return new State(state.level, state.actors, "lost");
+    }
+
     get type()
     { 
         return "MovingPlatform";
@@ -41,9 +42,9 @@ class MovingPlatform
         if (!state.level.touches(movedY, this.size, ["clip2","grass","ground"])) {
             pos = movedY;
         } else {
-            currentYSpeed = -16;
+            currentYSpeed = -4;
         }
-        if (!state.level.touches(movedY, this.size, ["clip"])) {
+        if (!state.level.touches(movedY, this.size, ["clip",])) {
             pos = movedY;
         } else {
             currentYSpeed = 16;

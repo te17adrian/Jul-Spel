@@ -4,10 +4,10 @@ class MovingPlatform2
     {
         this.pos = pos;
         this.speed = speed;
-        this.size = new Vector(5, 1);
+        this.size = new Vector(3, 1);
         this.delta = delta;
-        this.xSpeed = 8;
-        this.ySpeed = 0
+        this.xSpeed = 16;
+        this.ySpeed = 8
         this.prevX = prevX;
         this.prevY = prevY;
     }
@@ -17,7 +17,7 @@ class MovingPlatform2
     }
     collide = function(state)
     {
-        
+        return new State(state.level, state.actors, "lost");
     }
     get type()
     { 
@@ -25,28 +25,28 @@ class MovingPlatform2
     }
     update = function(time, state)
     {
-        let currentXSpeed = this.xSpeed * this.delta;
+        let currentYSpeed = this.ySpeed * this.delta;
         let pos = this.pos;
-        let movedX = pos.plus(new Vector(currentXSpeed * time, 0));
+        let movedY = pos.plus(new Vector(currentYSpeed * time, 0));
 
-        if (!state.level.touches(movedX, this.size, ["clip", "grass", "ground", "platformC", "platformR", "platformL"])) {
-            pos = movedX;
+        if (!state.level.touches(movedY, this.size, ["clip", "grass", "ground", "platformC", "platformR", "platformL"])) {
+            pos = movedY;
         } else {
             this.delta *= -1;
         }
 
-        let currentYSpeed = this.speed.x + time ;
-        let movedY = pos.plus(new Vector(0, currentYSpeed * time));
+        let currentXSpeed = this.speed.x;
+        let movedX = pos.plus(new Vector(0, currentXSpeed * time));
 
-        if (!state.level.touches(movedY, this.size, ["grass","ground"])) {
-            pos = movedY;
+        if (!state.level.touches(movedX, this.size, ["clip2"])) {
+            pos = movedX;
         } else {
-            currentYSpeed = 0;
+            currentYSpeed = -14;
         }
-        if (!state.level.touches(movedX, this.size, ["clip"])) {
+        if (!state.level.touches(movedX, this.size, ["clip","clip2"])) {
             pos = movedY;
         } else {
-            currentXSpeed = 14;
+            currentYSpeed = 14;
         }
         return new MovingPlatform2(pos, new Vector(currentXSpeed, currentYSpeed), this.delta, this.prevX, this.prevY);
     }
