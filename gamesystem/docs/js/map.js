@@ -1,3 +1,4 @@
+
 const levelKey = {
     "0,0,0": "empty",
     "255,15,255": "clip2",

@@ -44,14 +44,14 @@ class Enemy4
         if (!state.level.touches(movedY, this.size, ["clip", "grass", "ground", "platformC", "platformR", "platformL"])) {
             pos = movedY;
         } else {
-            currentYSpeed = -40 - 8
-            currentXSpeed =  -40 - 8;
+            currentYSpeed = -10 - 8
+            currentXSpeed =  -10 - 8;
         }
         if (!state.level.touches(movedY, this.size, ["clip"])) {
             pos = movedY;
         } else {
-            currentYSpeed = 70 + 8;
-            currentXSpeed = 20 + 8;
+            currentYSpeed = 10 + 8;
+            currentXSpeed = 10 + 8;
         }
 
         return new Enemy4(pos, new Vector(currentXSpeed, currentYSpeed), this.delta, this.prevX, this.prevY);

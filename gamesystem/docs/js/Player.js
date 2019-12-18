@@ -1,4 +1,3 @@
-  
 class Player
 {
     constructor(pos, speed, prevX, prevY, facing)
@@ -57,4 +56,3 @@ class Player
 
         return new Player(pos, new Vector(currentXSpeed, currentYSpeed), this.prevX, this.prevY, this.facing);
     }
-}
