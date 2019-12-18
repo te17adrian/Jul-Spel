@@ -1,3 +1,4 @@
+
 const levelKey = {
     "0,0,0": "empty",
     "255,15,255": "clip2",
@@ -32,13 +33,13 @@ let sources = {
     },
 
     player: {
-        src: 'img/sprites/cavedude_side2.png',
-        srcWidth: 1248,
-        srcHeight: 186,
-        width: 96,
+        src: 'img/walkcycle.png',
+        srcWidth: 304,
+        srcHeight: 220,
+        width: 64,
         height: 96,
         offsetX: 0,
-        offsetY: 512
+        offsetY: 0
     },
     enemy: {
         src: 'img/sprites/player.png',
@@ -122,13 +123,12 @@ let sources = {
         offsetY: 480
     },
     MovingPlatform: {
-        src: 'img/sprites/cavedude_side2.png',
-        srcWidth: 32,
-        srcHeight: 32,
-        width: 32,
-        height: 32,
-        offsetX: 32,
-        offsetY: 480
+        src: 'img/asteroid1.png',
+        srcWidth: 52,
+        srcHeight: 156,
+        width: 52,
+        height: 56,
+
     },
     MovingPlatform2: {
         src: 'img/sprites/cavedude_side2.png',
